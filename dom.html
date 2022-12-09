@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app"></div>
+    <p class="tes">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis dolor odio quisquam repellat deleniti nobis ipsum distinctio veniam ipsam voluptate voluptates placeat fugiat, odit sit aspernatur esse quo quia non.
+    </p>
+    <p class="tes">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, quaerat alias molestias obcaecati molestiae nostrum ipsum magnam ducimus officiis voluptatibus cum provident quis facilis, nam debitis fuga sapiente aut soluta.
+    </p>
+    <p class="tes"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat temporibus iure consequuntur quos corrupti enim autem atque repellat, reprehenderit odio, quam porro nemo modi suscipit exercitationem. Veritatis placeat cupiditate cum.
+    </p>
+    <script>
+        var tutorial = document.getElementById("app"); 
+        var nameclass = document.getElementsByClassName("tes");
+        let judul = document.createElement("h1");
+        // judul.textContent= "awokawokwaokaw"
+        document.body.append(judul)
+        // tutorial.remove();
+        console.log("nameclass :", nameclass);
+        nameclass[0].style.border = "1px solid";
+        nameclass[0].style.color = "green";
+        nameclass[0].style.fontFamily = "arial black";
+        nameclass[0].style.fontSize = "15px";
+        nameclass[0].style.textAlign = "center";
+        nameclass[1].style.border = "1px solid";
+        nameclass[1].style.fontFamily = "courier new";
+        nameclass[1].style.fontSize = "15px";
+        nameclass[1].style.textAlign = "center";
+        nameclass[2].style.border = "1px solid";
+        nameclass[2].style.backgroundColor = "yellow";
+        nameclass[2].style.fontFamily = "comic sans ms";
+        nameclass[2].style.fontSize = "15px";
+        nameclass[2].style.textAlign = "center";
+        tutorial.innerText = "AMIRULLAH JavaScript"
+        tutorial.style.backgroundColor = "gold";
+        tutorial.style.padding = "10px";
+        tutorial.style.textAlign = "center";
+        tutorial.style.fontFamily = "Courier new";
+        tutorial.style.fontSize = "30px";
+        tutorial.style.fontWeight = "700";
+        tutorial.style.marginRight = "25px"
+
+        setInterval( function(){
+            nameclass[0].style.color = "white"
+            nameclass[0].style.backgroundColor = "red"
+            nameclass[1].style.color = "yellow"
+            nameclass[1].style.backgroundColor = "orange"
+            nameclass[2].style.color = "black"
+            nameclass[2].style.backgroundColor = "green"
+
+            setTimeout( function(){
+             nameclass[0].style.color = "black"
+             nameclass[0].style.backgroundColor = "pink"
+            nameclass[1].style.color = "white"
+            nameclass[1].style.backgroundColor = "purple"
+            nameclass[2].style.color = "yellow"
+            nameclass[2].style.backgroundColor = "blue"
+            },500);
+        },1000);
+
+    </script>
+</body>
+</html>

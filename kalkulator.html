@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding-top: 70px;
+            /* background-color: yellowgreen; */
+        }
+
+        .container{
+            
+            max-width: 400px;
+            height: 600px;
+            margin: auto;
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+        input{
+            width: 390px;
+            height: 100px;
+            border-radius: 15px;
+            font-size: 30px;
+            text-align: right;
+            border: 1px solid white;
+            
+        }
+        .button{
+            /* background-color: aquamarine; */
+            /* margin: 2%;
+            width: 100%; */
+            height: 50px;
+            flex-wrap: wrap;
+            display: flex;
+            margin-top: 30px;
+        }
+        button{
+            width: 20%;
+            margin: 10px;
+            height: 80px;
+             border-radius: 50% ; 
+            margin-top: 5px;
+            border: 1px solid rgb(0, 0, 0);
+            font-size: 20px;
+        }
+        button:hover{
+            background-color: skyblue;
+            border: 1px solid yellow;
+            color: yellow;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+        <input type="text" id="layar">
+        </div>
+        <div class="button">
+       <button id="satu">1</button>
+       <button id="dua">2</button>
+       <button id="tiga">3</button>
+       <button id="clear">C</button>
+       <button id="empat">4</button>
+       <button id="lima">5</button>
+       <button id="enam">6</button>
+       <button id="tambah">+</button>
+       <button id="tujuh">7</button>
+       <button id="delapan">8</button>
+       <button id="sembilan">9</button>
+       <button id="kurang">-</button>
+       <button id="kosong">0</button>
+       <button id="kali">*</button>
+       <button id="bagi">/</button>
+       <button id="samadengan">=</button>
+       <button id="titik">.</button>
+       <button id="persen">%</button>
+       <button id="negatif">+/-</button>
+       <button id="delete">DEL</button>
+        </div>
+        
+    </div>
+    <script>
+        // nomor
+        let satu = document.getElementById('satu');
+        let dua = document.getElementById("dua");
+        let tiga = document.getElementById("tiga");
+        let empat = document.getElementById("empat");
+        let lima = document.getElementById("lima");
+        let enam = document.getElementById("enam");
+        let tujuh = document.getElementById("tujuh");
+        let delapan = document.getElementById("delapan");
+        let sembilan = document.getElementById("sembilan");
+        let kosong = document.getElementById("kosong");
+        //operator
+         var tambah = document.getElementById("tambah");
+         var kurang = document.getElementById("kurang");
+         var kali = document.getElementById("kali");
+         var bagi = document.getElementById("bagi");
+         var samadengan = document.getElementById("samadengan");
+         var clear = document.getElementById("clear");
+         var hapus = document.getElementById("delete")
+        let layar = document.getElementById("layar");
+        let nilaisekarang = 0;
+        let simpanDulu = 0;
+        let operator = "";
+
+        satu.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 1;
+                layar.value = '1';
+            }else{
+                nilaisekarang = nilaisekarang + "1";
+                layar.value = nilaisekarang;
+            }
+        });
+
+        dua.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 2;
+                layar.value = '2';
+            }else{
+                nilaisekarang = nilaisekarang + "2";
+                layar.value = nilaisekarang;
+            }
+        });
+
+        tiga.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 3;
+                layar.value = '3';
+            }else{
+                nilaisekarang = nilaisekarang + "3";
+                layar.value = nilaisekarang;
+            }
+        });
+        empat.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 4;
+                layar.value = '4';
+            }else{
+                nilaisekarang = nilaisekarang + "4";
+                layar.value = nilaisekarang;
+            }
+        });
+        lima.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 5;
+                layar.value = '5';
+            }else{
+                nilaisekarang = nilaisekarang + "5";
+                layar.value = nilaisekarang;
+            }
+        });
+        enam.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 6;
+                layar.value = '6';
+            }else{
+                nilaisekarang = nilaisekarang + "6";
+                layar.value = nilaisekarang;
+            }
+        });
+        tujuh.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 7;
+                layar.value = '7';
+            }else{
+                nilaisekarang = nilaisekarang + "7";
+                layar.value = nilaisekarang;
+            }
+        });
+        delapan.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 8;
+                layar.value = '8';
+            }else{
+                nilaisekarang = nilaisekarang + "8";
+                layar.value = nilaisekarang;
+            }
+        });
+        sembilan.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 9;
+                layar.value = '9';
+            }else{
+                nilaisekarang = nilaisekarang + "9";
+                layar.value = nilaisekarang;
+            }
+        });
+        kosong.addEventListener('click', function(){
+            if (nilaisekarang === 0){
+                nilaisekarang = 0;
+                layar.value = '0';
+            }else{
+                nilaisekarang = nilaisekarang + "";
+                layar.value = nilaisekarang;
+            }
+        });
+
+        tambah.addEventListener('click', function(){
+           simpanDulu = nilaisekarang;
+           nilaisekarang = 0;
+           layar.value = 0;
+           operator = "tambah";
+        });
+        kali.addEventListener('click', function(){
+           simpanDulu = nilaisekarang;
+           nilaisekarang = 0;
+           layar.value = 0;
+           operator = "kali";
+        });
+        bagi.addEventListener('click', function(){
+           simpanDulu = nilaisekarang;
+           nilaisekarang = 0;
+           layar.value = 0;
+           operator = "bagi";
+        });
+        kurang.addEventListener('click', function(){
+           simpanDulu = nilaisekarang;
+           nilaisekarang = 0;
+           layar.value = 0;
+           operator = "kurang";
+        });
+        
+        samadengan.addEventListener('click', function(){
+           if (operator == "tambah"){
+            let total = parseInt(simpanDulu) + parseInt(nilaisekarang);
+            layar.value = total;
+           }
+           if (operator == "kurang"){
+            let total = parseInt(simpanDulu) - parseInt(nilaisekarang);
+            layar.value = total;
+           }
+           if (operator == "bagi"){
+            let total = parseInt(simpanDulu) / parseInt(nilaisekarang);
+            layar.value = total;
+           }
+           if (operator == "kali"){
+            let total = parseInt(simpanDulu) * parseInt(nilaisekarang);
+            layar.value = total;
+           }
+        });
+        clear.addEventListener('click', function(){
+           nilaisekarang = "";
+           layar.value = "";
+        });
+        hapus.addEventListener('click', function(){
+          nilaisekarang = nilaisekarang.substring(0, nilaisekarang.length - 1);
+          layar.value = nilaisekarang;
+        });
+        // setInterval( function(){
+        //     satu.style.backgroundColor = "green"
+        //     dua.style.backgroundColor = "red"
+        //     tiga.style.backgroundColor = "yellow"
+        //     empat.style.backgroundColor = "orange"
+        //     lima.style.backgroundColor = "blue"
+        //     enam.style.backgroundColor = "pink"
+        //     tambah.style.backgroundColor = "purple"
+        //     clear.style.backgroundColor = "skyblue"
+        //     tujuh.style.backgroundColor = "green"
+        //     delapan.style.backgroundColor = "red"
+        //     sembilan.style.backgroundColor = "yellow"
+        //     kosong.style.backgroundColor = "orange"
+        //     kali.style.backgroundColor = "blue"
+        //     bagi.style.backgroundColor = "pink"
+        //     kurang.style.backgroundColor = "purple"
+        //     samadengan.style.backgroundColor = "skyblue"
+
+        //     setTimeout( function(){
+        //      satu.style.backgroundColor = "pink"
+        //      dua.style.backgroundColor = "green"
+        //     tiga.style.backgroundColor = "red"
+        //     empat.style.backgroundColor = "yellow"
+        //     lima.style.backgroundColor = "orange"
+        //     enam.style.backgroundColor = "blue"
+        //     tambah.style.backgroundColor = "skyblue"
+        //     clear.style.backgroundColor = "purple"
+        //     tujuh.style.backgroundColor = "orange"
+        //     delapan.style.backgroundColor = "skyblue"
+        //     sembilan.style.backgroundColor = "green"
+        //     kosong.style.backgroundColor = "pink"
+        //     kali.style.backgroundColor = "yellow"
+        //     bagi.style.backgroundColor = "red"
+        //     kurang.style.backgroundColor = "yellowgreen"
+        //     samadengan.style.backgroundColor = "bisque"
+        //     },500);
+        // },1000);
+    </script>
+   
+</body>
+</html>

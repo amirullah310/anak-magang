@@ -1,0 +1,119 @@
+body{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: bisque;
+    overflow-x: hidden;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+button {
+    height: 50px;
+    margin: 10px;
+    font-size: 1.2em;
+    border-style: none;
+    /*background-color: #d6e0f5;*/
+    border-radius: 15px;
+    border: 1px solid black;
+
+}
+
+
+button:hover {
+    color: aliceblue;
+    background-color: #beeaef;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.calculator {
+    position: relative;
+    top: 150px;
+    margin: 0 auto;
+    max-width: 500px;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+    max-height: 900px;
+    /* margin-top: 30px; */
+    padding: 20px;
+    background-color: #BCEAD5;
+    
+   
+}
+
+.calcButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin:0 auto;
+    background-color: #DEF5E5;
+    padding-top: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    /* box-shadow: 3px 3px 4px 4px white; */
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.calcButtons > button:nth-child(17) {
+ 
+    grid-column: 1/3;
+    
+}
+
+.operator {
+    background-color: white;
+    border: 1px solid black;
+
+}
+
+
+
+.number {
+    background-color: white ;
+    border: 1px solid black;
+
+}
+
+.userInput {
+    position: relative;
+    height: 80px;
+    max-width: 100%;
+    text-align: right;
+    padding: 10px;
+    font-size: 25px;
+    border: 2px solid  aquamarine;
+    background-color: white;
+    border-radius: 15px;
+    
+}
+
+
+
+.calcButtons > button:nth-child(19) {
+
+    background-color: rgb(169, 250, 169);
+    border: 1px solid black;
+
+}
+
+.userEntry {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    margin: 5px;
+    right:0;
+}
+
+.hasilakhir{
+
+    position: absolute;
+    right:0;
+    margin:5px;
+    top:0;
+    padding:0;
+}

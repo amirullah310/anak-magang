@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gold;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container{
+            width: 800px;
+            margin: auto;
+        }
+        .navbar{
+            height: 80px;
+            background-color: grey;
+            color: white;
+            /* border: 2px solid black; */
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            font-family: 'Courier New', Courier, monospace;
+            /* margin-bottom: 20px; */
+        }
+
+    .menu{
+        display: flex;
+        /* justify-content: space-around; */
+
+    }
+    .sidebar, .content{
+        width: 50%;
+        justify-content: center;
+        /* display: flex; */
+        text-align: center;
+        align-items: center;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 20px;
+
+    }
+    .sidebar{
+        background-color: black;
+        color: white;
+    }
+    .content{
+        background-color: white;
+    }
+    /* .card p{
+        display: flex;
+        justify-content: space-between;
+    } */
+    .kiri , .kanan{
+        height: 470px;
+        width: 50%;
+        justify-content: center;
+         display: flex; 
+        text-align: center;
+        align-items: center;
+        /* font-family: 'Courier New', Courier, monospace; */
+        /* padding: 20px; */
+
+    }
+    .kiri img, .kanan img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+    .kiri{
+        background-color: black;
+        color: white;
+    }
+    .kanan{
+        background-color: white;
+    }
+    .isi{
+        height: 470px;
+            /* background-color: grey; 
+            /* color: white; */
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+    }
+    .kiri ul li , .kanan ul li{
+        list-style: none;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    .footer{
+        height: 230px;
+        background-color: grey;
+    }
+    .score ul{
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        /* margin-right: 20px;
+        margin-left: 20px; */
+        
+    }
+    .judul{
+        padding-bottom: 85px;
+        padding-top: 15px;
+    }
+    .score ul li{
+        margin-right: 20px;
+        margin-left: 20px;
+        font-size: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .score img{
+        width: 80px;
+        height: 80px;
+        
+    }
+    .judul{
+        align-items: center;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h1 id="layar"></h1>
+        </div>
+        <div class="menu">
+            <div class="sidebar">
+                <h1>You</h1>
+                <!-- <div class="card"><p>aa</p></div>
+                <div class="card"><p>aa</p></div>
+                <div class="card"><p>aa</p></div> -->
+            </div>
+            <div class="content">
+                <h1>Computer</h1>
+                <!-- <div class="card">batu</div>
+                <div class="card">batu</div>
+                <div class="card">batu</div> -->
+            </div>
+
+        </div>
+        <div class="isi">
+            <div class="kiri">
+                <ul>
+                    <li class="user" data-item="gunting"><img src="img/kertas.jpeg" alt=""></li>
+                    <li class="user" data-item="kertas"><img src="img/gunting.jpeg" alt=""></li>
+                    <li class="user" data-item="batu"><img src="img/batu.jpeg" alt=""></li>
+                </ul>
+            </div>
+            <div class="kanan">
+                <ul>
+                    <li><img src="img/kertas.jpeg" alt=""></li>
+                    <li><img src="img/gunting.jpeg" alt=""></li>
+                    <li><img src="img/batu.jpeg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="judul">
+                <h2>SCORE</h2>
+
+            </div>
+            <div class="score">
+                <ul>
+                    <li>You</li>
+                    <li><img src="img/vss.png" alt=""></li>
+                    <li>Com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        let user = document.getElementsByClassName("user");
+        let pilihanuse ='';
+       
+
+        Array.from(user).forEach(function (element){
+            element.addEventListener('click', function(){
+                pilihanuse = this.getAttribute("data-item");
+                pilihancomFinal = pilihancom();
+                status = adu();
+                let layar = document.getElementById('layar');
+        layar.innerHTML= status;
+            });
+
+        });
+        
+        function pilihancom(){
+            let datacom = ['gunting','kertas','batu']
+            let pilihanComAcak = Math.floor(Math.random() * datacom.length);
+            let pilihancomFinal = datacom[pilihanComAcak];
+            return pilihancomFinal;
+        };
+
+        function adu(){
+            let status ='';
+            if (pilihanuse === 'batu' && pilihancomFinal === 'batu'){
+                status = 'seri';
+            }
+            if (pilihanuse === 'batu' && pilihancomFinal === 'gunting'){
+                status = 'user menang';
+            }
+            if (pilihanuse === 'batu' && pilihancomFinal === 'kertas'){
+                status = 'com menang';
+            }
+            if (pilihanuse === 'kertas' && pilihancomFinal === 'batu'){
+                status = 'user menang';
+            }
+            if (pilihanuse === 'kertas' && pilihancomFinal === 'kertas'){
+                status = 'seri';
+            }
+            if (pilihanuse === 'kertas' && pilihancomFinal === 'gunting'){
+                status = 'com menang';
+            }
+            if (pilihanuse === 'gunting' && pilihancomFinal === 'gunting'){
+                status = 'seri';
+            }
+            if (pilihanuse === 'gunting' && pilihancomFinal === 'kertas'){
+                status = 'user menang';
+            }
+            if (pilihanuse === 'gunting' && pilihancomFinal === 'batu'){
+                status = 'com menang';
+            }
+            
+            return status;
+        }
+    </script>
+    
+</body>
+</html>

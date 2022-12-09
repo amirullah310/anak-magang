@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">klik</button>
+    <script>
+        function myFunction(){
+            alert(kelompok);
+        }
+
+        const Nama = prompt("Siapa namamu?");
+        const Sekolah = prompt("Dimana kamu sekolah?");
+        const Alamat = prompt("Dimana alamatmu?");
+        let Kelas = prompt("Kamu kelas berapa?");
+        let Jurusan = prompt("Apa Jurusanmu?");
+        // const Sekolah = "SMKN 1 Lhokseumawe";
+        // const Alamat = "Punteut";
+        // let Kelas = "XI";
+        // let Jurusan = "RPL";
+        var kelompok = [Nama , Sekolah , Alamat , Kelas , Jurusan]
+        // var Alert = prompt("Siapa nama kamu?")
+        document.write(`<p>Nama : ${Nama}</p>`,`<p>Sekolah : ${Sekolah}</p>`,`<p>Alamat : ${Alamat}</p>`,`<p>Kelas : ${Kelas}</p>`,`<p>Jurusan : ${Jurusan}</p>`)
+    
+        console.log("Nama    :" , Nama );
+        console.log("Sekolah :" , Sekolah );
+        console.log("Alamat  :" , Alamat );
+        console.log("Kelas   :" , Kelas );
+        console.log("Jurusan :" , Jurusan );
+
+       
+        
+    </script>
+</body>
+</html>

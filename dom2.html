@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0
+      }
+      .container{
+        /* padding-top: 100px; */
+        width: 1200px;
+        margin: auto;
+        box-shadow: 5px 5px 10px black;
+      }
+      .navbar {
+        text-align: center;
+        height: 100px;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: gold;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      .navbar h1{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        text-align: center;
+      }
+      .menu{
+        display: flex;
+        justify-content: space-between;
+      }
+      .bg,.warna{
+        width: 50%;
+        font-size: 20px;
+        /* text-align: center; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 200px;
+        background-color: bisque;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      .bg label , .warna label{
+        margin-right: 25px;
+      }
+      .warna{
+        background-color: rgb(231, 231, 129);
+      }
+      .hero {
+        height: 100px;
+        background-color: rgb(222, 172, 136);
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      .hero-1 , .hero-2{
+        width: 50%;
+        font-size: 20px;
+        /* text-align: center; */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        height: 200px;
+        font-family: 'Comic sans ms';
+      }
+      .footer{
+        height: 50px;
+        background-color: rgb(236, 207, 170);
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+    <h1>Aplikasi ubah warna</h1>
+    </div>
+    <div class="hero">
+      <div class="hero-1">
+      <h1>Background color</h1>
+      </div>
+      <div class="hero-2">
+      <h1>Text color</h1>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="bg">
+    <label> Klik button</label>
+    <br>
+    <input type="color" id="bg-color">
+      </div>
+    <br>
+    <div class="warna">
+    <label> Klik button</label>
+    <input type="color" id="text-color">
+    </div>
+    </div>
+    <div class="footer">
+      <p>Create by @Amirullah</p>
+    </div>
+  </div>
+    <script>
+      let bgcolor = document.getElementById("bg-color");
+      let textcolor = document.getElementById("text-color");  
+      
+
+      bgcolor.addEventListener("change" , (event) => {
+      document.body.style.backgroundColor = bgcolor.value;
+    });
+
+    textcolor.addEventListener("change", (event) => {
+      document.body.style.color = textcolor.value;
+    });
+    </script>
+</body>
+</html>

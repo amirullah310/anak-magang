@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 8px;
+            margin: 0;
+        }
+        .container{
+            margin: auto;
+            width: 1000px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .navbar{
+            height: 50px ;
+            border: 1px solid black;
+            border-radius: 10px;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            box-shadow: inset 5px 5px 10px black;
+        }
+        .navbar h1{
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+        }
+        .content {
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: inset 5px 5px 10px black;
+            margin-top: 20px;
+            /* align-items: center;
+            justify-content: center;
+            display: flex; */
+            padding-top: 270px;
+        }
+        button{
+            border: 1px solid black;
+            box-shadow: inset 5px 5px 5px  white;
+            border-radius: 5px;
+            width: 100px;
+            background-color: pink;
+            justify-content: center;
+            text-align: center;
+            font-family: 'comic sans ms';
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h1>Background Random</h1>
+        </div>
+        <div class="content">
+        <h1> BG-COLOR : <span class="color">WHITE</span></h1>
+        <br>
+        <button id="btn">KLIK ME</button>
+        </div>
+        
+    </div>
+    <script>
+        const warna = ['BLUE','RED','GREEN','YELLOW','PINK','ORANGE','PURPLE','GREY','AQUA','AQUAMARINE','YELLOWGREEN','BISQUE','BLUEVIOLET','PLUM','PERU']
+        const btn = document.getElementById("btn");
+        const color = document.querySelector('.color');
+
+        function randomcolor() {
+            return Math.floor(Math.random() * warna.length);
+        }
+
+        console.log('color :' ,randomcolor());
+        btn.addEventListener('click', function(){
+            const warnarandom = randomcolor();
+
+            document.body.style.backgroundColor = warna[warnarandom];
+            color.textContent = warna[warnarandom];
+        });
+
+
+
+
+    </script>
+</body>
+</html>
